@@ -429,24 +429,7 @@ function submitApp(){
   document.getElementById('f-name').value='';
   document.getElementById('f-phone').value='';
   document.getElementById('f-email').value='';
-}
-
-/* ---- Admin login ---- */
-function adminLogin(){
-  var u=document.getElementById('a-user').value;
-  var p=document.getElementById('a-pass').value;
-  var err=document.getElementById('admin-err');
-  /* Default credentials: admin / mei2025 — change these */
-  if(u==='admin'&&p==='mei2025'){
-    err.style.display='none';
-    document.getElementById('adminPanel').style.display='block';
-    document.querySelector('.admin-card').style.display='none';
-  } else {
-    err.style.display='block';
-  }
-}
-
-/* ---- Chat ---- */
+}* ---- Chat ---- */
 var chatHistory=[];
 var SYSTEM_PROMPT='You are a helpful assistant for Mei Press Group, a Nairobi-based firm offering Study Abroad placements, OSH Training, Road Safety Training, and Driver Placement services. Paybill: 4095377. Phone: 0703738707. Be concise, friendly and professional. Answer in 1-3 sentences only.';
 

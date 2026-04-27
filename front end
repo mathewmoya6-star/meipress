@@ -1,0 +1,14 @@
+async function submitApp(){
+  const res = await fetch('/api/applications',{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      name:document.getElementById('f-name').value,
+      phone:document.getElementById('f-phone').value,
+      email:document.getElementById('f-email').value,
+      service:document.getElementById('f-service').value
+    })
+  });
+
+  alert("Application submitted successfully");
+}

@@ -1,0 +1,6 @@
+MONGO_URI=mongodb+srv://your-db-url
+JWT_SECRET=supersecretkey
+ADMIN_USER=admin
+ADMIN_PASS=strongpassword
+
+ANTHROPIC_KEY=your_api_key

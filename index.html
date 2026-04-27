@@ -5,88 +5,302 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Mei Press Group</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-
 <style>
-body{font-family:'DM Sans',sans-serif;margin:0;background:#fdf9f0;color:#1a1a2e}
-nav{background:#071a33;color:#fff;padding:14px 32px;display:flex;justify-content:space-between}
-.logo{font-family:'Playfair Display',serif}
-.hero{background:#071a33;color:#fff;text-align:center;padding:80px 20px}
-.btn{background:#c9991f;color:#071a33;padding:12px 24px;border:none;cursor:pointer}
-section{padding:50px 20px;max-width:900px;margin:auto}
-input,select{width:100%;padding:10px;margin-top:5px;margin-bottom:15px}
-.card{background:#fff;padding:20px;border-radius:8px;border:1px solid #eee}
+body{margin:0;font-family:Segoe UI;background:#f4f6fb;color:#1a1a2e}
+
+nav{
+  background:#071a33;
+  color:white;
+  padding:15px 30px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+nav a{
+  color:#d4af37;
+  margin-left:15px;
+  text-decoration:none;
+  font-size:14px;
+}
+
+.hero{
+  background:#071a33;
+  color:white;
+  text-align:center;
+  padding:100px 20px;
+}
+.hero h1{font-size:38px}
+.btn{
+  background:#d4af37;
+  color:#071a33;
+  padding:12px 18px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  margin-top:10px;
+  font-weight:bold;
+}
+
+section{
+  max-width:1000px;
+  margin:auto;
+  padding:50px 20px;
+}
+
+.grid{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+
+.card{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  flex:1;
+  min-width:250px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* TESTIMONIALS */
+.testimonials{
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.quote{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  font-style:italic;
+  flex:1;
+  min-width:250px;
+}
+
+/* PARTNERS */
+.partners{
+  display:flex;
+  gap:15px;
+  flex-wrap:wrap;
+}
+.partner{
+  background:white;
+  padding:15px;
+  border-radius:8px;
+  font-weight:bold;
+}
+
+/* CHAT */
+.chat{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:300px;
+  background:white;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+.chat-body{
+  height:200px;
+  overflow:auto;
+  padding:10px;
+}
+.chat-input{
+  display:flex;
+}
+.chat-input input{
+  flex:1;
+  padding:10px;
+  border:none;
+  outline:none;
+}
+.chat-input button{
+  background:#d4af37;
+  border:none;
+  padding:10px;
+  cursor:pointer;
+}
 </style>
 </head>
 
 <body>
 
+<!-- NAV -->
 <nav>
-  <div class="logo">Mei Press Group</div>
+  <div><b>Mei Press Group</b></div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#partners">Partners</a>
+    <a href="#apply">Apply</a>
+    <a href="#contact">Contact</a>
+  </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <h1>Build Your Future With Us</h1>
-  <p>Study abroad, driver placement & safety training</p>
+  <p>Study Abroad • OSH Training • Driver Placement</p>
+  <button class="btn" onclick="document.getElementById('apply').scrollIntoView({behavior:'smooth'})">
+    Apply Now
+  </button>
 </div>
 
-<section>
-  <h2>Apply Now</h2>
-
-  <div class="card">
-    <input id="name" placeholder="Full Name">
-    <input id="phone" placeholder="Phone">
-    <input id="email" placeholder="Email">
-    <select id="service">
-      <option>Study Abroad</option>
-      <option>Driver Placement</option>
-      <option>OSH Training</option>
-    </select>
-
-    <button class="btn" onclick="submitApp()">Submit</button>
-    <p id="msg"></p>
-  </div>
+<!-- ABOUT -->
+<section id="about">
+<h2>About Us</h2>
+<div class="card">
+Mei Press Group is a recruitment and training organization based in Nairobi, Kenya.
+We connect individuals to global opportunities through education, skills training, and employment placement.
+</div>
 </section>
 
+<!-- MISSION / VISION / WHY US -->
 <section>
-  <h2>M-Pesa Payment</h2>
-  <div class="card">
-    <p><strong>Paybill:</strong> 4095377</p>
-    <input id="payphone" placeholder="Phone 2547XXXXXXXX">
-    <input id="amount" placeholder="Amount">
-    <button class="btn" onclick="pay()">Pay Now</button>
-  </div>
+<div class="grid">
+
+<div class="card">
+<h3>🎯 Mission</h3>
+<p>To empower individuals with skills and global career opportunities.</p>
+</div>
+
+<div class="card">
+<h3>🌍 Vision</h3>
+<p>To be a leading gateway to international education and employment in Africa.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Why Us</h3>
+<p>Trusted partners, fast processing, verified institutions, and professional support.</p>
+</div>
+
+</div>
 </section>
 
-<section>
-  <h2>Chat</h2>
-  <div class="card">
-    <div id="chat"></div>
-    <input id="chatInput" placeholder="Ask something..." onkeydown="if(event.key==='Enter')sendChat()">
-  </div>
+<!-- SERVICES -->
+<section id="services">
+<h2>Services</h2>
+<div class="grid">
+<div class="card">🚸 Road Safety Training</div>
+<div class="card">🏭 OSH Training</div>
+<div class="card">🚗 Driver Placement</div>
+<div class="card">🎓 Study Abroad</div>
+</div>
 </section>
+
+<!-- TESTIMONIALS -->
+<section>
+<h2>Testimonials</h2>
+<div class="testimonials">
+
+<div class="quote">
+“Got placed in Canada within a few months. Very professional.” – Brian O.
+</div>
+
+<div class="quote">
+“The training helped me secure overseas employment.” – Faith N.
+</div>
+
+<div class="quote">
+“Smooth and transparent process from start to finish.” – James K.
+</div>
+
+</div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners">
+<h2>Our Global Academic Partners</h2>
+
+<div class="partners">
+<div class="partner">🎓 University of Toronto (Canada)</div>
+<div class="partner">🎓 University of British Columbia (Canada)</div>
+<div class="partner">🎓 Arizona State University (USA)</div>
+<div class="partner">🎓 Conestoga College (Canada)</div>
+<div class="partner">🎓 Wayne State University (USA)</div>
+<div class="partner">🎓 Saint Louis University (USA)</div>
+</div>
+
+<br>
+
+<div class="card">
+<b>Study Abroad Destinations</b><br><br>
+🇺🇸 USA • 🇨🇦 Canada • 🇬🇧 UK • 🇦🇺 Australia • 🇩🇪 Germany<br><br>
+We assist students with applications, admissions, visa guidance, and pre-departure support.
+</div>
+</section>
+
+<!-- APPLY -->
+<section id="apply">
+<h2>Apply Now</h2>
+<div class="card">
+
+<input id="name" placeholder="Full Name"><br><br>
+<input id="phone" placeholder="Phone (2547XXXXXXXX)"><br><br>
+
+<select id="service">
+<option>Study Abroad</option>
+<option>Driver Placement</option>
+<option>OSH Training</option>
+<option>Road Safety Training</option>
+</select>
+
+<br><br>
+<button class="btn" onclick="submitApp()">Submit Application</button>
+<p id="msg"></p>
+
+</div>
+</section>
+
+<!-- PAYMENT -->
+<section>
+<h2>M-Pesa Payment</h2>
+<div class="card">
+<p><b>Paybill:</b> 4095377</p>
+<input id="payphone" placeholder="2547XXXXXXXX"><br><br>
+<input id="amount" placeholder="Amount"><br><br>
+<button class="btn" onclick="pay()">Pay Now</button>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+<h2>Contact</h2>
+<p>📞 0703738707</p>
+<p>📍 Nairobi, Kenya</p>
+</section>
+
+<!-- CHAT -->
+<div class="chat">
+<div class="chat-body" id="chat"></div>
+<div class="chat-input">
+<input id="msg" placeholder="Ask something...">
+<button onclick="send()">Send</button>
+</div>
+</div>
 
 <script>
 
-/* ✅ SUBMIT APPLICATION */
+const API = "https://YOUR-BACKEND.onrender.com";
+
+/* APPLY */
 async function submitApp(){
-  const res = await fetch('/api/applications',{
+  await fetch(API+'/api/applications',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
       name:document.getElementById('name').value,
       phone:document.getElementById('phone').value,
-      email:document.getElementById('email').value,
       service:document.getElementById('service').value
     })
   });
 
-  document.getElementById('msg').innerText="Application submitted!";
+  document.getElementById('msg').innerText="Application submitted successfully!";
 }
 
-/* ✅ M-PESA PAYMENT */
+/* PAYMENT */
 async function pay(){
-  const res = await fetch('/api/mpesa/stk',{
+  await fetch(API+'/api/mpesa/stk',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
     body:JSON.stringify({
@@ -95,33 +309,31 @@ async function pay(){
     })
   });
 
-  alert("STK Push sent to phone");
+  alert("STK Push sent. Check your phone.");
 }
 
-/* ✅ CHATBOT (SECURE VIA BACKEND) */
-let chatHistory=[];
+/* CHAT */
+let history=[];
+async function send(){
+  let text=document.getElementById("msg").value;
+  if(!text) return;
 
-async function sendChat(){
-  const input=document.getElementById('chatInput');
-  const text=input.value;
-  input.value='';
+  document.getElementById("chat").innerHTML += "<p><b>You:</b> "+text+"</p>";
 
-  document.getElementById('chat').innerHTML += "<p><b>You:</b> "+text+"</p>";
+  history.push({role:'user',content:text});
 
-  chatHistory.push({role:'user',content:text});
-
-  const res = await fetch('/api/chat',{
+  const res = await fetch(API+'/api/chat',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({messages:chatHistory})
+    body:JSON.stringify({messages:history})
   });
 
   const data = await res.json();
-  const reply = data.content[0].text;
+  const reply = data.content?.[0]?.text || "Error";
 
-  chatHistory.push({role:'assistant',content:reply});
+  history.push({role:'assistant',content:reply});
 
-  document.getElementById('chat').innerHTML += "<p><b>Bot:</b> "+reply+"</p>";
+  document.getElementById("chat").innerHTML += "<p><b>AI:</b> "+reply+"</p>";
 }
 
 </script>
